@@ -1,49 +1,79 @@
-//Assignment no 6
-//Shipping Names:Store a person's name, and include some whitespace characters at the beginning and end of
-//name.Make sure you use each character combination. "\t" and "\n" , at least once.Print the name once, so
-//the whitespace around the name is displayed then print the name after striping the whitespaces.
-var namewhite_space = "\t \n mahnoor shafiq \t \n";
-console.log("name with white space", namewhite_space);
-var strippedName = namewhite_space.trim();
-console.log("stripped Name:", strippedName);
-//Assignment no 7
-//Number Eight:Write addition,subtraction,multiplication, and division operations that each result in the 8.
-//Be sure to enclose your operations in print statements to se the results.
-var addition = 5 + 3;
-console.log("Addition result:", addition);
-var subtraction = 10 - 2;
-console.log("Subtaction result:", subtraction);
-var multiplication = 4 * 2;
-console.log("Multiply result:", multiplication);
-var division = 80 / 10;
-console.log("Divide result:", division);
-//Assignment no 8
-//You should create  four lines that look like this:
-//console.log(5 + 3)
-//your output should simply be four lines with the number 8 appearing once on each line.
-console.log(5 + 3);
-console.log(10 - 2);
-console.log(4 * 2);
-console.log(40 / 5);
-//Assignment no 9
-//Favourite Number:Store your favourite no in a variable. Then,using that variable, create a message that 
-//reveals your favourite number. Print that message.
-var favouriteNumber = 6;
-var number_fav = "My favorite number is: ".concat(favouriteNumber);
-console.log(number_fav);
-//Assignment no 10
-//Adding coments:Choose two of the programs you've written ,and add at least one comment to each, if 
-//you don't have anything specific to write because your programs are too simple at this point, just add 
-//your name and the current date at the top of each program file. then write one sentence describing
-//what the program does.
-//program 1
-//firstly declare two variables and assign values 
-var Number1 = 45;
-var Number2 = 5;
-//now divide those  variables value
-var final_result = Number1 / Number2;
-//at last print the result by using console
-console.log(final_result);
-//program 2
-var myHouse = "very beautiful"; //here I declare a variable
-console.log("my house is:", myHouse); //and here I print that
+"use strict";
+//Assignment no 41
+/*Magician:Make a array of magician's names. Pass the array to a function called show_magicians(),which
+prints the name of each magician in  the array. */
+Object.defineProperty(exports, "__esModule", { value: true });
+let magician = ['Suhani', 'Jakky', 'Lois', 'Herry Potter'];
+function show_magicians(magicians) {
+    magicians.forEach(element => {
+        console.log(element);
+    });
+}
+show_magicians(magician);
+//Assignment no 42
+/* Great Magician:Start with a copy of your program from exercise 41.Write a function called make_great()that
+modifies the array of magicians by adding the phrase the Great to each magician's name. Call show_magicians()
+to see that the list  has actually been modified.  */
+let magiciann = ['Suhani', 'Jakky', 'Lois', 'Herry Potter'];
+function make_great(magiciannArray) {
+    for (let i = 0; i < magiciannArray.length; i++) {
+        magiciann[i] = 'the Great ' + magiciannArray[i];
+    }
+}
+function show_magicianns(magicians) {
+    magicians.forEach(element => {
+        console.log(element);
+    });
+}
+make_great(magiciann);
+show_magicianns(magiciann);
+//Assignment no 43
+/* Unchanged Magicians: Start with your work from exercise 42. Call the function make_great() with a copy
+of the array of magicians' names. Because the original array will be unchanged,return  the new array and store
+it in a seperate array.Call show_magicians() with each array to show that you have one array of the original
+names and one array with the Great  added to each magician's name.*/
+let Magician = ['Suhani', 'Jakky', 'Lois', 'Herry Potter'];
+function copyArray(arry) {
+    return [...arry];
+}
+function Make_great(magiciannArray) {
+    for (let i = 0; i < magiciannArray.length; i++) {
+        magiciannArray[i] = 'the Great ' + magiciannArray[i];
+    }
+}
+function show_magician(magicians) {
+    magicians.forEach(element => {
+        console.log(element);
+    });
+}
+const copyMagicanArray = copyArray(Magician);
+make_great(copyMagicanArray);
+console.log('\n\nThis is the original Array:');
+show_magicianns(magiciann);
+console.log('\n\nThis is the modified copy of array:');
+show_magicianns(magiciann);
+//Assignment no 44
+/*Sandwiches: Write a function that accepts a array of items a person wants on a sandwich.The function should
+ have one parameter that collects as many items as the function call provides, and it should print a summary
+ of the sandwich that is being ordered.Call the function three times, using a different  number of arguments
+ each time. */
+function sandwich(items) {
+    console.log("Making your sandwich with:");
+    items.forEach(element => console.log("- " + element));
+    console.log("Enjoy your sandwich !");
+}
+sandwich(['Cheese', 'Pepperoni', 'Cabbage']);
+sandwich(['Mayonase', 'Egg', 'Pepper']);
+sandwich(['Corn', 'Chicken', 'Carrot']);
+//Assignment no 45
+/*Cars:Write a function that store information about a car in an Object.The function should always receive a manufacturer and amodel name.
+It should then accept an arbitrary number of keyword arguments.Call the function with the required information and two other name-value pairs,
+such as a color or an optional feature.Print the Object that's returned to make sure all the information was  stored correctly. */
+function infoOfCar(manufacturer, modelName, ...extraOption) {
+    let Carinfo = Object.assign({ manufacturer,
+        modelName }, Object.assign({}, ...extraOption));
+    return Carinfo;
+}
+;
+let answer = infoOfCar("Toyota", "Civic", { color: 'brown' }, { features: ['Navigation', 'Power window'] });
+console.log(answer);
