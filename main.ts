@@ -1,119 +1,57 @@
-//Assignment no 41
-/*Magician:Make a array of magician's names. Pass the array to a function called show_magicians(),which 
-prints the name of each magician in  the array. */
+//Assignment no 1 is node installation which is already installed.
 
-import { log } from "console";
-import { features } from "process";
+//Assignment no 2
+//Personal message: store a person's name in a variable , and print a message to
+// that person. Your message should be simple , such as 
+// Hello Eric, would you like to learn some python today?
 
 
+let personName:string = "Eric";
+let msg = " Hello Eric, would you like to learn some python today?";
 
-let magician:string[] = ['Suhani', 'Jakky', 'Lois', 'Herry Potter'];
+console.log(personName, msg);
 
-function show_magicians(magicians:string[]) {
-    magicians.forEach(element => {
-        console.log(element);
-        
-    });
+//Assignment no 3
+//Name Cases:Store a person's name in a variable ,and then print that person's name
+//in lowercase 'uppercase and titlecase.
+
+let perName:string  = "MAHANOOR";
+console.log(perName.toUpperCase()); //uppercase
+console.log(perName.toLowerCase()); //lowercase
+//titlecase
+let prName:string = "i am learning coding";
+let words:string[] = prName.split(" ");
+let titleCaseName: string = "";
+
+//for loop 1-10
+for (let i = 0; i < words.length; i++){
+    titleCaseName += words[i].charAt(0).toUpperCase()
+    + words[i].slice(1).toLowerCase() + " "
 }
-show_magicians(magician)
+console.log(titleCaseName);
 
+//Assignment no 4
+//Famous Quote:Find a quote from a famous person you admire.Print the quote and the name of it's author.
+//Your output should look something like the following ,including the quotation marks:
+//Albert Einstein once said,"A person who never made a mistake never tried anything new."
 
-//Assignment no 42
-/* Great Magician:Start with a copy of your program from exercise 41.Write a function called make_great()that 
-modifies the array of magicians by adding the phrase the Great to each magician's name. Call show_magicians()
-to see that the list  has actually been modified.  */
+let famousQuote:string = "A person who never made a mistake never tried anything new.";
+let author:string = "Albert Einstein";
 
+console.log(`${author} once said, "${famousQuote}"`);
 
+//Assignment no 5
+//Famous Quote 2:Repeat exercise 4,but this time store the famous person's name in a variable called
+//famous_person . Then compose your message and store it in a new variable called message. Print your message.
 
-let magiciann:string[] = ['Suhani', 'Jakky', 'Lois', 'Herry Potter'];
-function make_great(magiciannArray:string[]) {
-    for (let i= 0; i < magiciannArray.length; i++) {
-         magiciann[i] = 'the Great ' + magiciannArray[i];
-        
-    }
-}
+let famous_person:string = " Albert Einstein";
+let message: string = `${famous_person} once said, "${famousQuote}"`;
 
-function show_magicianns(magicians:string[]) {
-    magicians.forEach(element => {
-        console.log(element);
-        
-    });
-}
-make_great(magiciann);
-show_magicianns(magiciann);
+console.log(message);
 
 
 
-//Assignment no 43
-/* Unchanged Magicians: Start with your work from exercise 42. Call the function make_great() with a copy 
-of the array of magicians' names. Because the original array will be unchanged,return  the new array and store 
-it in a seperate array.Call show_magicians() with each array to show that you have one array of the original
-names and one array with the Great  added to each magician's name.*/
-let Magician:string[] = ['Suhani', 'Jakky', 'Lois', 'Herry Potter'];
-
-function copyArray(arry:string[]){
-  return [...arry]
-}
-
-function Make_great(magiciannArray:string[]) {
-    for (let i= 0; i < magiciannArray.length; i++) {
-         magiciannArray[i] = 'the Great ' + magiciannArray[i];
-        
-    }
-}
-
-function show_magician(magicians:string[]) {
-    magicians.forEach(element => {
-        console.log(element);
-        
-    });
-}
-const copyMagicanArray = copyArray(Magician)
-make_great(copyMagicanArray);
-
-console.log('\n\nThis is the original Array:');
-show_magicianns(magiciann);
-
-console.log('\n\nThis is the modified copy of array:');
-show_magicianns(magiciann);
 
 
 
-//Assignment no 44
-/*Sandwiches: Write a function that accepts a array of items a person wants on a sandwich.The function should
- have one parameter that collects as many items as the function call provides, and it should print a summary
- of the sandwich that is being ordered.Call the function three times, using a different  number of arguments 
- each time. */
 
-function sandwich (items:string[]) {
-     console.log("Making your sandwich with:");
-
-     items.forEach(element => console.log("- " + element));
-
-     console.log("Enjoy your sandwich !");
-     
-}
-sandwich(['Cheese','Pepperoni','Cabbage']);
-sandwich(['Mayonase', 'Egg', 'Pepper']);
-
-sandwich(['Corn', 'Chicken', 'Carrot']);
-
-
-
-//Assignment no 45
-/*Cars:Write a function that store information about a car in an Object.The function should always receive a manufacturer and amodel name.
-It should then accept an arbitrary number of keyword arguments.Call the function with the required information and two other name-value pairs,
-such as a color or an optional feature.Print the Object that's returned to make sure all the information was  stored correctly. */
-
-function infoOfCar(manufacturer:string, modelName:string, ...extraOption: {  [key: string]: any }  []):
-object {
-
-    let Carinfo = {
-        manufacturer,
-        modelName,
-        ...Object.assign({}, ...extraOption)
-    }
-    return Carinfo;
-};
-let result= infoOfCar("Toyota","Civic", {color: 'brown'}, {features: ['Navigation', 'Power window']})
-console.log(result);
